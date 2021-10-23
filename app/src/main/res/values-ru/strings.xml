@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Новости</string>
+
+    <!-- Navigation -->
+    <string name="feed_option_text">Лента</string>
+    <string name="search_option_text">Поиск</string>
+    <string name="bookmarks_option_text">Закладки</string>
+
+</resources>
