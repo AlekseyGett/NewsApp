@@ -7,4 +7,7 @@
     <string name="search_option_text">Поиск</string>
     <string name="bookmarks_option_text">Закладки</string>
 
+    <!-- Article card -->
+    <string name="preview_content_description">Превью статьи</string>
+    <string name="bookmark_button_content_description">Кнопка "добавить в закладки"</string>
 </resources>

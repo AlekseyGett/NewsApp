@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/ac_bottom_margin">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/ac_padding">
+
+        <ImageButton
+            android:id="@+id/bookmarkButton"
+            android:layout_width="@dimen/ac_bookmark_button_size"
+            android:layout_height="@dimen/ac_bookmark_button_size"
+            android:layout_marginStart="@dimen/ac_padding"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="@id/titleText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/titleText"
+            android:contentDescription="@string/bookmark_button_content_description"
+            tools:src="@drawable/bookmark_unchecked_icon" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ac_bookmark_button_title_gap"
+            android:layout_marginEnd="@dimen/ac_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/bookmarkButton"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/ArticleCardTitle"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/publishedAtText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ac_title_date_gap"
+            app:layout_constraintTop_toBottomOf="@id/titleText"
+            app:layout_constraintStart_toStartOf="@id/titleText"
+            style="@style/ArticleCardPublishedAt"
+            tools:text="24.10.2021 1:09" />
+
+        <ImageView
+            android:id="@+id/previewImage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/ac_content_top_margin"
+            app:layout_constraintTop_toBottomOf="@id/publishedAtText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="H, 16:9"
+            android:contentDescription="@string/preview_content_description" />
+
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ac_content_top_margin"
+            android:layout_marginHorizontal="@dimen/ac_padding"
+            app:layout_constraintTop_toBottomOf="@id/previewImage"
+            style="@style/ArticleCardDescription"
+            tools:text="Description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
