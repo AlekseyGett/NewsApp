@@ -4,9 +4,12 @@ import com.github.alekseygett.newsapp.feature.feed.data.ArticlesRepository
 import com.github.alekseygett.newsapp.feature.feed.data.ArticlesRepositoryImpl
 import com.github.alekseygett.newsapp.feature.feed.data.api.NewsApi
 import com.github.alekseygett.newsapp.feature.feed.data.api.NewsRemoteSource
+import com.github.alekseygett.newsapp.feature.feed.domain.FeedInteractor
+import com.github.alekseygett.newsapp.feature.feed.ui.FeedViewModel
 import com.github.alekseygett.newsapp.utils.AuthInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -44,5 +47,13 @@ val feedModule = module {
 
     single<ArticlesRepository> {
         ArticlesRepositoryImpl(get<NewsRemoteSource>())
+    }
+
+    single<FeedInteractor> {
+        FeedInteractor(get<ArticlesRepository>())
+    }
+
+    viewModel<FeedViewModel> {
+        FeedViewModel(get<FeedInteractor>())
     }
 }
