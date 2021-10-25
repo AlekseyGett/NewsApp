@@ -4,12 +4,14 @@ import com.github.alekseygett.newsapp.base.Event
 import com.github.alekseygett.newsapp.feature.common.domain.Article
 
 data class ViewState(
+    val isLoading: Boolean,
     val articles: List<Article>,
-    val isLoading: Boolean
+    val errorMessage: String?
 )
 
 sealed class UiEvent: Event {
     object OnNewsRequest : UiEvent()
+    object OnErrorMessageShowed : UiEvent()
     data class OnBookmarkButtonClick(val article: Article) : UiEvent()
 }
 
