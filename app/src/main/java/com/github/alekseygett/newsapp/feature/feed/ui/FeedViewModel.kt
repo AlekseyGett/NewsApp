@@ -7,6 +7,7 @@ import com.github.alekseygett.newsapp.feature.feed.domain.FeedInteractor
 import kotlinx.coroutines.launch
 
 class FeedViewModel(private val interactor: FeedInteractor) : BaseViewModel<ViewState>() {
+
     override fun initialViewState(): ViewState = ViewState(emptyList(), false)
 
     override suspend fun reduce(event: Event, previousState: ViewState): ViewState? {
@@ -20,14 +21,24 @@ class FeedViewModel(private val interactor: FeedInteractor) : BaseViewModel<View
                             processDataEvent(DataEvent.OnSuccessNewsRequest(articles))
                         },
                         onError = { error ->
-                            val errorMessage = error.localizedMessage ?: "" // TODO
+                            val errorMessage = error.localizedMessage ?: ""
                             processDataEvent(DataEvent.OnFailureNewsRequest(errorMessage))
                         }
                     )
                 }
             }
             is UiEvent.OnBookmarkButtonClick -> {
+                viewModelScope.launch {
+                    val article = event.article
 
+                    if (article.isBookmarked) {
+                        interactor.removeBookmark(article)
+                    } else {
+                        interactor.addBookmark(article)
+                    }
+
+                    processUiEvent(UiEvent.OnNewsRequest)
+                }
             }
             is DataEvent.OnLoadData -> {
                 return previousState.copy(isLoading = true)
@@ -42,4 +53,5 @@ class FeedViewModel(private val interactor: FeedInteractor) : BaseViewModel<View
 
         return null
     }
+
 }

@@ -10,7 +10,7 @@ import com.google.gson.internal.bind.util.ISO8601Utils
 import java.util.*
 
 class ArticlesRepositoryImpl(private val dataSource: NewsRemoteSource): ArticlesRepository {
-    override suspend fun getArticles(
+    override suspend fun fetchArticles(
         query: String,
         sources: String,
         language: Language,

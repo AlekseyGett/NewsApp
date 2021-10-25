@@ -1,20 +1,28 @@
 package com.github.alekseygett.newsapp.feature.feed.di
 
+import androidx.room.Room
+import androidx.room.RoomDatabase
+import com.github.alekseygett.newsapp.AppDatabase
 import com.github.alekseygett.newsapp.feature.feed.data.ArticlesRepository
 import com.github.alekseygett.newsapp.feature.feed.data.ArticlesRepositoryImpl
+import com.github.alekseygett.newsapp.feature.feed.data.BookmarksRepository
+import com.github.alekseygett.newsapp.feature.feed.data.BookmarksRepositoryImpl
 import com.github.alekseygett.newsapp.feature.feed.data.api.NewsApi
 import com.github.alekseygett.newsapp.feature.feed.data.api.NewsRemoteSource
+import com.github.alekseygett.newsapp.feature.feed.data.local.ArticleDao
 import com.github.alekseygett.newsapp.feature.feed.domain.FeedInteractor
 import com.github.alekseygett.newsapp.feature.feed.ui.FeedViewModel
 import com.github.alekseygett.newsapp.utils.AuthInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 const val BASE_URL = "https://newsapi.org/"
+const val DATABASE = "NewsAppDatabase"
 
 val feedModule = module {
     single<OkHttpClient> {
@@ -49,8 +57,22 @@ val feedModule = module {
         ArticlesRepositoryImpl(get<NewsRemoteSource>())
     }
 
+    single<AppDatabase> {
+        Room.databaseBuilder(androidContext(), AppDatabase::class.java, DATABASE)
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+
+    single<ArticleDao> {
+        get<AppDatabase>().articleDao()
+    }
+
+    single<BookmarksRepository> {
+        BookmarksRepositoryImpl(get<ArticleDao>())
+    }
+
     single<FeedInteractor> {
-        FeedInteractor(get<ArticlesRepository>())
+        FeedInteractor(get<ArticlesRepository>(), get<BookmarksRepository>())
     }
 
     viewModel<FeedViewModel> {

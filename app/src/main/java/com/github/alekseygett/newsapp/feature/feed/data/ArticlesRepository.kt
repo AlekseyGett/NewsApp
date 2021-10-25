@@ -6,7 +6,7 @@ import com.github.alekseygett.newsapp.feature.feed.domain.model.SortingOption
 import java.util.*
 
 interface ArticlesRepository {
-    suspend fun getArticles(
+    suspend fun fetchArticles(
         query: String = "",
         sources: String = "",
         language: Language,
