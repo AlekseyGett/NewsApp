@@ -1,6 +1,6 @@
-package com.github.alekseygett.newsapp.feature.feed.data
+package com.github.alekseygett.newsapp.data
 
-import com.github.alekseygett.newsapp.feature.common.domain.Article
+import com.github.alekseygett.newsapp.domain.model.Article
 import com.github.alekseygett.newsapp.feature.feed.domain.model.Language
 import com.github.alekseygett.newsapp.feature.feed.domain.model.SortingOption
 import java.util.*

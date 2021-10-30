@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.github.alekseygett.newsapp.R
 import com.github.alekseygett.newsapp.databinding.ItemArticleBinding
-import com.github.alekseygett.newsapp.feature.common.domain.Article
+import com.github.alekseygett.newsapp.domain.model.Article
 import java.text.SimpleDateFormat
 import java.util.*
 

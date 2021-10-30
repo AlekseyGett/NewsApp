@@ -1,7 +1,7 @@
-package com.github.alekseygett.newsapp.feature.feed.data.local
+package com.github.alekseygett.newsapp.data.local
 
 import androidx.room.*
-import com.github.alekseygett.newsapp.feature.feed.data.model.ArticleEntity
+import com.github.alekseygett.newsapp.data.model.ArticleEntity
 
 @Dao
 interface ArticleDao {

@@ -1,8 +1,8 @@
-package com.github.alekseygett.newsapp.feature.feed.data
+package com.github.alekseygett.newsapp.data
 
-import com.github.alekseygett.newsapp.feature.common.domain.Article
-import com.github.alekseygett.newsapp.feature.feed.data.local.ArticleDao
-import com.github.alekseygett.newsapp.feature.feed.data.model.ArticleEntity
+import com.github.alekseygett.newsapp.domain.model.Article
+import com.github.alekseygett.newsapp.data.local.ArticleDao
+import com.github.alekseygett.newsapp.data.model.ArticleEntity
 import com.github.alekseygett.newsapp.feature.feed.domain.toDomainModel
 import com.github.alekseygett.newsapp.feature.feed.domain.toEntity
 

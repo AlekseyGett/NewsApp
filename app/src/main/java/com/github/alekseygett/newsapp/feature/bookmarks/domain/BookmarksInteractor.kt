@@ -1,7 +1,7 @@
 package com.github.alekseygett.newsapp.feature.bookmarks.domain
 
-import com.github.alekseygett.newsapp.feature.common.domain.Article
-import com.github.alekseygett.newsapp.feature.feed.data.BookmarksRepository
+import com.github.alekseygett.newsapp.domain.model.Article
+import com.github.alekseygett.newsapp.data.BookmarksRepository
 
 class BookmarksInteractor(private val bookmarksRepository: BookmarksRepository) {
 

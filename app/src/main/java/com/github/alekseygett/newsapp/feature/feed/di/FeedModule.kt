@@ -2,13 +2,13 @@ package com.github.alekseygett.newsapp.feature.feed.di
 
 import androidx.room.Room
 import com.github.alekseygett.newsapp.AppDatabase
-import com.github.alekseygett.newsapp.feature.feed.data.ArticlesRepository
-import com.github.alekseygett.newsapp.feature.feed.data.ArticlesRepositoryImpl
-import com.github.alekseygett.newsapp.feature.feed.data.BookmarksRepository
-import com.github.alekseygett.newsapp.feature.feed.data.BookmarksRepositoryImpl
-import com.github.alekseygett.newsapp.feature.feed.data.api.NewsApi
-import com.github.alekseygett.newsapp.feature.feed.data.api.NewsRemoteSource
-import com.github.alekseygett.newsapp.feature.feed.data.local.ArticleDao
+import com.github.alekseygett.newsapp.data.ArticlesRepository
+import com.github.alekseygett.newsapp.data.ArticlesRepositoryImpl
+import com.github.alekseygett.newsapp.data.BookmarksRepository
+import com.github.alekseygett.newsapp.data.BookmarksRepositoryImpl
+import com.github.alekseygett.newsapp.data.api.NewsApi
+import com.github.alekseygett.newsapp.data.api.NewsRemoteSource
+import com.github.alekseygett.newsapp.data.local.ArticleDao
 import com.github.alekseygett.newsapp.feature.feed.domain.FeedInteractor
 import com.github.alekseygett.newsapp.feature.feed.ui.FeedViewModel
 import com.github.alekseygett.newsapp.utils.AuthInterceptor

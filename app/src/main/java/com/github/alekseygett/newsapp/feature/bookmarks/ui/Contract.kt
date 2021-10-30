@@ -1,7 +1,7 @@
 package com.github.alekseygett.newsapp.feature.bookmarks.ui
 
 import com.github.alekseygett.newsapp.base.Event
-import com.github.alekseygett.newsapp.feature.common.domain.Article
+import com.github.alekseygett.newsapp.domain.model.Article
 
 data class ViewState(
     val articles: List<Article>,

@@ -1,8 +1,8 @@
 package com.github.alekseygett.newsapp.feature.feed.domain
 
-import com.github.alekseygett.newsapp.feature.common.domain.Article
-import com.github.alekseygett.newsapp.feature.feed.data.ArticlesRepository
-import com.github.alekseygett.newsapp.feature.feed.data.BookmarksRepository
+import com.github.alekseygett.newsapp.domain.model.Article
+import com.github.alekseygett.newsapp.data.ArticlesRepository
+import com.github.alekseygett.newsapp.data.BookmarksRepository
 import com.github.alekseygett.newsapp.feature.feed.domain.model.Language
 import com.github.alekseygett.newsapp.feature.feed.domain.model.SortingOption
 import com.github.alekseygett.newsapp.utils.attempt
