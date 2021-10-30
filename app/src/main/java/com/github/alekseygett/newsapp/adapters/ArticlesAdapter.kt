@@ -1,4 +1,4 @@
-package com.github.alekseygett.newsapp.feature.feed.ui
+package com.github.alekseygett.newsapp.adapters
 
 import android.annotation.SuppressLint
 import android.graphics.drawable.Drawable

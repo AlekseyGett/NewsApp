@@ -1,8 +1,8 @@
 package com.github.alekseygett.newsapp.data
 
 import com.github.alekseygett.newsapp.domain.model.Article
-import com.github.alekseygett.newsapp.feature.feed.domain.model.Language
-import com.github.alekseygett.newsapp.feature.feed.domain.model.SortingOption
+import com.github.alekseygett.newsapp.domain.model.Language
+import com.github.alekseygett.newsapp.domain.model.SortingOption
 import java.util.*
 
 interface ArticlesRepository {

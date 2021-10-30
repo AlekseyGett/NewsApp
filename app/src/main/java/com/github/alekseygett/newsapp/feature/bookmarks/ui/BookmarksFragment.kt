@@ -11,7 +11,7 @@ import com.github.alekseygett.newsapp.R
 import com.github.alekseygett.newsapp.databinding.FragmentBookmarksBinding
 import com.github.alekseygett.newsapp.feature.article.ui.ArticleActivity
 import com.github.alekseygett.newsapp.domain.model.Article
-import com.github.alekseygett.newsapp.feature.feed.ui.ArticlesAdapter
+import com.github.alekseygett.newsapp.adapters.ArticlesAdapter
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

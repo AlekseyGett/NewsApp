@@ -3,8 +3,8 @@ package com.github.alekseygett.newsapp.data
 import com.github.alekseygett.newsapp.domain.model.Article
 import com.github.alekseygett.newsapp.data.api.NewsRemoteSource
 import com.github.alekseygett.newsapp.data.model.ArticleModel
-import com.github.alekseygett.newsapp.feature.feed.domain.model.Language
-import com.github.alekseygett.newsapp.feature.feed.domain.model.SortingOption
+import com.github.alekseygett.newsapp.domain.model.Language
+import com.github.alekseygett.newsapp.domain.model.SortingOption
 import com.github.alekseygett.newsapp.feature.feed.domain.toDomainModel
 import com.google.gson.internal.bind.util.ISO8601Utils
 import java.util.*

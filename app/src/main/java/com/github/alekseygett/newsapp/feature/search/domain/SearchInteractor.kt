@@ -1,19 +1,19 @@
-package com.github.alekseygett.newsapp.feature.feed.domain
+package com.github.alekseygett.newsapp.feature.search.domain
 
-import com.github.alekseygett.newsapp.domain.model.Article
 import com.github.alekseygett.newsapp.data.ArticlesRepository
 import com.github.alekseygett.newsapp.data.BookmarksRepository
+import com.github.alekseygett.newsapp.domain.model.Article
 import com.github.alekseygett.newsapp.domain.model.Language
 import com.github.alekseygett.newsapp.domain.model.SortingOption
 import com.github.alekseygett.newsapp.utils.attempt
 import java.util.*
 
-class FeedInteractor(
+class SearchInteractor(
     private val articlesRepository: ArticlesRepository,
     private val bookmarksRepository: BookmarksRepository
 ) {
 
-    suspend fun getArticles() = attempt {
+    suspend fun getArticles(query: String) = attempt {
         val hourAgo = Calendar.getInstance().run {
             add(Calendar.HOUR_OF_DAY, -1)
             time
@@ -22,7 +22,7 @@ class FeedInteractor(
         val sources = "lenta"
 
         val fetchedArticles = articlesRepository.fetchArticles(
-            query = "",
+            query = query,
             sources = sources,
             language = Language.Russian,
             from = hourAgo,

@@ -1,4 +1,4 @@
-package com.github.alekseygett.newsapp.feature.feed.domain.model
+package com.github.alekseygett.newsapp.domain.model
 
 enum class Language(val value: String) { // ISO-639-1
     Arabic("ar"),
