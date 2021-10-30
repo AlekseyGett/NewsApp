@@ -25,6 +25,10 @@
 
         </activity>
 
+        <activity
+            android:name=".feature.article.ui.ArticleActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

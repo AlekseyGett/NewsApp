@@ -10,4 +10,12 @@
     <!-- Article card -->
     <string name="preview_content_description">Превью статьи</string>
     <string name="bookmark_button_content_description">Кнопка "добавить в закладки"</string>
+
+    <!-- Feed -->
+    <string name="feed_title">Лента новостей</string>
+
+    <!-- Bookmarks -->
+    <string name="bookmarks_title">Закладки</string>
+    <string name="undo_hint_text">Закладка удалена.</string>
+    <string name="undo_button_text">Отменить</string>
 </resources>

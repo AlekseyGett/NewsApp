@@ -8,7 +8,11 @@ import kotlinx.coroutines.launch
 
 class FeedViewModel(private val interactor: FeedInteractor) : BaseViewModel<ViewState>() {
 
-    override fun initialViewState(): ViewState = ViewState(false, emptyList(), null)
+    override fun initialViewState() = ViewState(
+        isLoading = false,
+        articles = emptyList(),
+        errorMessage = null
+    )
 
     override suspend fun reduce(event: Event, previousState: ViewState): ViewState? {
         when (event) {
@@ -27,7 +31,7 @@ class FeedViewModel(private val interactor: FeedInteractor) : BaseViewModel<View
                     )
                 }
             }
-            is UiEvent.OnErrorMessageShowed -> {
+            is UiEvent.OnErrorMessageShow -> {
                 return previousState.copy(errorMessage = null)
             }
             is UiEvent.OnBookmarkButtonClick -> {

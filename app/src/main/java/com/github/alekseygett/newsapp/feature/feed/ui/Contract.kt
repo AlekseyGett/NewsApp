@@ -11,7 +11,7 @@ data class ViewState(
 
 sealed class UiEvent: Event {
     object OnNewsRequest : UiEvent()
-    object OnErrorMessageShowed : UiEvent()
+    object OnErrorMessageShow : UiEvent()
     data class OnBookmarkButtonClick(val article: Article) : UiEvent()
 }
 

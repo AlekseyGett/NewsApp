@@ -1,14 +1,14 @@
 package com.github.alekseygett.newsapp.feature.feed.ui
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
-import androidx.core.view.isVisible
+import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.github.alekseygett.newsapp.databinding.FragmentFeedBinding
+import com.github.alekseygett.newsapp.feature.article.ui.ArticleActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FeedFragment : Fragment() {
@@ -25,13 +25,14 @@ class FeedFragment : Fragment() {
             onBookmarkButtonClick = { article ->
                 viewModel.processUiEvent(UiEvent.OnBookmarkButtonClick(article))
             },
-            onItemClick = { }
+            onItemClick = { article ->
+                openArticleView(article.sourceUrl)
+            }
         )
     }
 
     private var _binding: FragmentFeedBinding? = null
 
-    // Only valid between onCreateView and onDestroyView
     private val binding
         get() = _binding!!
 
@@ -44,6 +45,11 @@ class FeedFragment : Fragment() {
         return binding.root
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -54,14 +60,20 @@ class FeedFragment : Fragment() {
     }
 
     private fun render(viewState: ViewState) {
-        binding.progressBar.isVisible = viewState.isLoading
+        binding.progressBar.isGone = !viewState.isLoading
 
         articlesAdapter.update(viewState.articles)
 
         viewState.errorMessage?.let { errorMessage ->
             showErrorMessage(errorMessage)
-            viewModel.processUiEvent(UiEvent.OnErrorMessageShowed)
+            viewModel.processUiEvent(UiEvent.OnErrorMessageShow)
         }
+    }
+
+    private fun openArticleView(url: String) {
+        val intent = Intent(context, ArticleActivity::class.java)
+        intent.putExtra(ArticleActivity.SOURCE_URL_KEY, url)
+        startActivity(intent)
     }
 
     private fun showErrorMessage(errorMessage: String) {

@@ -10,4 +10,12 @@
     <!-- Article card -->
     <string name="preview_content_description">Article preview</string>
     <string name="bookmark_button_content_description">Bookmark button</string>
+
+    <!-- Feed -->
+    <string name="feed_title">News feed</string>
+
+    <!-- Bookmarks -->
+    <string name="bookmarks_title">Bookmarks</string>
+    <string name="undo_hint_text">The bookmark has been removed.</string>
+    <string name="undo_button_text">Undo</string>
 </resources>

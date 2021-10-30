@@ -1,7 +1,6 @@
 package com.github.alekseygett.newsapp.feature.feed.di
 
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.github.alekseygett.newsapp.AppDatabase
 import com.github.alekseygett.newsapp.feature.feed.data.ArticlesRepository
 import com.github.alekseygett.newsapp.feature.feed.data.ArticlesRepositoryImpl
