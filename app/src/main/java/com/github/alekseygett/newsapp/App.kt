@@ -1,6 +1,7 @@
 package com.github.alekseygett.newsapp
 
 import android.app.Application
+import com.github.alekseygett.newsapp.feature.bookmarks.di.bookmarksModule
 import com.github.alekseygett.newsapp.feature.feed.di.feedModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -14,7 +15,7 @@ class App : Application() {
             androidLogger()
             androidContext(applicationContext)
 
-            modules(feedModule)
+            modules(feedModule, bookmarksModule)
         }
     }
 }
