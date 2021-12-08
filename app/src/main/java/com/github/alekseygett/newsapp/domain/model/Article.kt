@@ -1,4 +1,4 @@
-package com.github.alekseygett.newsapp.feature.common.domain
+package com.github.alekseygett.newsapp.domain.model
 
 import java.util.*
 

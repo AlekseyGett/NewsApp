@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import com.github.alekseygett.newsapp.adapters.ArticlesAdapter
 import com.github.alekseygett.newsapp.databinding.FragmentFeedBinding
 import com.github.alekseygett.newsapp.feature.article.ui.ArticleActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel

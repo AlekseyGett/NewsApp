@@ -1,4 +1,4 @@
-package com.github.alekseygett.newsapp.feature.feed.data.model
+package com.github.alekseygett.newsapp.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

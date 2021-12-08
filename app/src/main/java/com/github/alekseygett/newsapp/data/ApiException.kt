@@ -1,3 +1,3 @@
-package com.github.alekseygett.newsapp.feature.feed.data
+package com.github.alekseygett.newsapp.data
 
 class ApiException(message: String) : Exception(message)

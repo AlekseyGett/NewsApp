@@ -1,4 +1,4 @@
-package com.github.alekseygett.newsapp.feature.feed.ui
+package com.github.alekseygett.newsapp.feature.search.ui
 
 import com.github.alekseygett.newsapp.base.Event
 import com.github.alekseygett.newsapp.domain.model.Article
@@ -6,12 +6,15 @@ import com.github.alekseygett.newsapp.domain.model.Article
 data class ViewState(
     val isLoading: Boolean,
     val articles: List<Article>,
-    val errorMessage: String?
+    val errorMessage: String?,
+    val isSearchFieldVisible: Boolean,
+    val query: String
 )
 
 sealed class UiEvent: Event {
-    object OnNewsRequest : UiEvent()
     object OnErrorMessageShow : UiEvent()
+    object OnSearchButtonClick : UiEvent()
+    data class OnNewsRequest(val query: String) : UiEvent()
     data class OnBookmarkButtonClick(val article: Article) : UiEvent()
 }
 

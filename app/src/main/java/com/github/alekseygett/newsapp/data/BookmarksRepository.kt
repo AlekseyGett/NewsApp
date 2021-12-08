@@ -1,6 +1,6 @@
-package com.github.alekseygett.newsapp.feature.feed.data
+package com.github.alekseygett.newsapp.data
 
-import com.github.alekseygett.newsapp.feature.common.domain.Article
+import com.github.alekseygett.newsapp.domain.model.Article
 
 interface BookmarksRepository {
     suspend fun create(article: Article)

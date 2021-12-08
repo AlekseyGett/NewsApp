@@ -1,6 +1,6 @@
-package com.github.alekseygett.newsapp.feature.feed.data.api
+package com.github.alekseygett.newsapp.data.api
 
-import com.github.alekseygett.newsapp.feature.feed.data.model.NewsModel
+import com.github.alekseygett.newsapp.data.model.NewsModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 

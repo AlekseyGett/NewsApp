@@ -1,4 +1,4 @@
-package com.github.alekseygett.newsapp.feature.feed.data.api
+package com.github.alekseygett.newsapp.data.api
 
 class NewsRemoteSource(private val api: NewsApi) {
     suspend fun getArticles(

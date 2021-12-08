@@ -1,8 +1,8 @@
 package com.github.alekseygett.newsapp.feature.feed.domain
 
-import com.github.alekseygett.newsapp.feature.common.domain.Article
-import com.github.alekseygett.newsapp.feature.feed.data.model.ArticleEntity
-import com.github.alekseygett.newsapp.feature.feed.data.model.ArticleModel
+import com.github.alekseygett.newsapp.domain.model.Article
+import com.github.alekseygett.newsapp.data.model.ArticleEntity
+import com.github.alekseygett.newsapp.data.model.ArticleModel
 import com.google.gson.internal.bind.util.ISO8601Utils
 import java.text.ParsePosition
 import java.util.*
